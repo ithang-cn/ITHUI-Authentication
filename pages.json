@@ -1,0 +1,35 @@
+{
+	"easycom": {
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "ITHUI-Authentication"
+			}
+		},{
+			"path": "pages/authentication/style-one",
+			"style": {
+				"navigationBarTitleText": "完善认证资料"
+			}
+		},{
+			"path": "pages/authentication/style-two",
+			"style": {
+				"navigationBarTitleText": "实名认证"
+			}
+		},{
+			"path": "pages/authentication/style-three",
+			"style": {
+				"navigationBarTitleText": "实名认证"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "ITHUI",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {}
+}

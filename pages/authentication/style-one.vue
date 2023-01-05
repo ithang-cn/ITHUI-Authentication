@@ -47,40 +47,40 @@
 		</view>
 		<view class="upload">
 			<view class="upload-item">
-				<u-upload @afterRead="afterRead($event)" :fileList="uploadA" @delete="deletePic" name="uploadA" multiple
-					:maxCount="1" width="160" height="120">
-					<image src="@/static/style-one/sfzzm.jpg" mode="widthFix" style="width: 160px;height: 120px;">
+				<u-upload @afterRead="afterRead" :fileList="uploadA" @delete="deletePic" name="uploadA" multiple
+					:maxCount="1" width="160" height="100">
+					<image src="@/static/style-one/sfzzm.jpg" style="width: 160px;height: 100px;">
 					</image>
 				</u-upload>
 				<text class="title">身份证正面</text>
 			</view>
 			<view class="upload-item">
-				<u-upload @afterRead="afterRead($event)" :fileList="uploadB" @delete="deletePic" name="uploadB" multiple
-					:maxCount="1" width="160" height="120">
-					<image src="@/static/style-one/sfzfm.jpg" mode="widthFix" style="width: 160px;height: 120px;">
+				<u-upload @afterRead="afterRead" :fileList="uploadB" @delete="deletePic" name="uploadB" multiple
+					:maxCount="1" width="160" height="100">
+					<image src="@/static/style-one/sfzfm.jpg" style="width: 160px;height: 100px;">
 					</image>
 				</u-upload>
 				<text class="title">身份证反面</text>
 			</view>
 			<view class="upload-item">
-				<u-upload @afterRead="afterRead($event)" :fileList="uploadC" @delete="deletePic" name="uploadC" multiple
-					:maxCount="1" width="160" height="120">
-					<image src="@/static/style-one/yhk.jpg" mode="widthFix" style="width: 160px;height: 120px;">
+				<u-upload @afterRead="afterRead" :fileList="uploadC" @delete="deletePic" name="uploadC" multiple
+					:maxCount="1" width="160" height="100">
+					<image src="@/static/style-one/yhk.jpg" style="width: 160px;height: 100px;">
 					</image>
 				</u-upload>
 				<text class="title">银行卡正面</text>
 			</view>
 			<view class="upload-item">
-				<u-upload @afterRead="afterRead($event)" :fileList="uploadD" @delete="deletePic" name="uploadD" multiple
-					:maxCount="1" width="160" height="120">
-					<image src="@/static/style-one/scsfz.jpg" mode="widthFix" style="width: 160px;height: 120px;">
+				<u-upload @afterRead="afterRead" :fileList="uploadD" @delete="deletePic" name="uploadD" multiple
+					:maxCount="1" width="160" height="100">
+					<image src="@/static/style-one/scsfz.jpg" style="width: 160px;height: 100px;">
 					</image>
 				</u-upload>
 				<text class="title">手持身份证银行卡正面</text>
 			</view>
 		</view>
 		<view class="submit">
-			<u-button @click="submit" type="warning" text="提交实名"></u-button>
+			<u-button @click="submit" shape="circle" type="warning" text="提交实名"></u-button>
 		</view>
 	</view>
 </template>
@@ -169,25 +169,25 @@
 						icon: 'none',
 						duration: 2000
 					});
-				} else if (!this.uploadA) {
+				} else if (this.uploadA.length === 0) {
 					uni.showToast({
 						title: '请上传身份证正面',
 						icon: 'none',
 						duration: 2000
 					});
-				} else if (!this.uploadB) {
+				} else if (this.uploadB.length === 0) {
 					uni.showToast({
 						title: '请上传身份证反面',
 						icon: 'none',
 						duration: 2000
 					});
-				} else if (!this.uploadC) {
+				} else if (this.uploadC.length === 0) {
 					uni.showToast({
 						title: '请上传银行卡正面',
 						icon: 'none',
 						duration: 2000
 					});
-				} else if (!this.uploadD) {
+				} else if (this.uploadD.length === 0) {
 					uni.showToast({
 						title: '请上传手持身份证银行卡正面',
 						icon: 'none',
@@ -200,19 +200,18 @@
 						url: []
 					}
 					uploads.forEach(item => {
-						this.uploadFilePromise(item).then(res => {
+						this.uploadFilePromise(item[0]).then(res => {
 							form.url.push(res)
+						}).catch(err => {
+							uni.showToast({
+								title: '图片上传失败，请稍后重试',
+								icon: 'none',
+								duration: 2000
+							});
+							return
 						})
 					})
-					if (form.url.length !== 4) {
-						uni.showToast({
-							title: '图片上传失败，请稍后重试',
-							icon: 'none',
-							duration: 2000
-						});
-					} else {
-						console.log(form)
-					}
+					console.log(form)
 				}
 			},
 			uploadFilePromise(event) {
@@ -257,7 +256,7 @@
 					align-items: center;
 					font-size: 34rpx;
 					border-bottom: 2rpx solid #eeeeee;
-					color: #333333;
+					color: #333;
 					padding: 0 20rpx;
 					width: 100%;
 
@@ -300,7 +299,7 @@
 					text-align: center;
 
 					.title {
-						color: #999999;
+						color: #999;
 						font-size: 28rpx;
 						line-height: 28rpx;
 					}
@@ -309,6 +308,7 @@
 
 			.submit {
 				margin-top: 40rpx;
+				padding: 20px;
 			}
 		}
 	}

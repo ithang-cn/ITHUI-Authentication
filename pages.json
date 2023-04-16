@@ -23,6 +23,11 @@
 			"style": {
 				"navigationBarTitleText": "实名认证"
 			}
+		},{
+			"path": "pages/authentication/style-four",
+			"style": {
+				"navigationBarTitleText": "实名认证"
+			}
 		}
 	],
 	"globalStyle": {

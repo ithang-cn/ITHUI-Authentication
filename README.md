@@ -1,4 +1,4 @@
-ITHUI-Authentication 上传身份认证、实名认证、完善认证资料
+ITHUI-Authentication 上传身份证&银行卡认证、实名认证、完善认证资料
 ===============
 
 <p align="center">
@@ -14,12 +14,12 @@ ITHUI-Authentication 上传身份认证、实名认证、完善认证资料
 
 ## 介绍
 
-* ITHUI-Authentication 适用于上传身份认证、实名认证、完善认证资料，兼容小程序、APP、H5，多款样式按需选择。
-* ITHUI-Authentication 目前仅完成样式一和样式二，其他样式开发中，敬请期待。
+* ITHUI-Authentication 适用于上传身份证&银行卡认证、实名认证、完善认证资料，兼容小程序、APP、H5。
+* ITHUI-Authentication 多款样式按需任选，其他样式开发中，敬请期待。
 
 ## 版本
 
-v1.1.0
+v1.2.0
 
 ## 特性
 
@@ -32,9 +32,10 @@ v1.1.0
 - [个人主页](https://ithang.cn/)
 
 ## 展示
-### 样式一
 <figure class="half">
     <img src="https://static.ithang.cn/ITHUI/ITHUI-Authentication/001.jpg" width="200"/>
+</figure>
+<figure class="half">
     <img src="https://static.ithang.cn/ITHUI/ITHUI-Authentication/002.jpg" width="200"/>
     <img src="https://static.ithang.cn/ITHUI/ITHUI-Authentication/003.jpg" width="200"/>
 </figure>

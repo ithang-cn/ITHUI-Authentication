@@ -33,15 +33,15 @@
 						<image src="@/static/style-two/sfzfm.png" style="width: 130px;height: 90px;padding: 15px;">
 						</image>
 					</u-upload>
-					<view class="intro">上传身份证正面</view>
+					<view class="intro">上传身份证反面</view>
 				</view>
 			</view>
 		</view>
 		<view class="mt-20 expect">
 			<h2>拍摄身份证要求：</h2>
-			<view class="expect-text">大陆公民持有的本人有效二代身份证；</view>
+			<view class="expect-text">大陆公民持本人有效的二代身份证；</view>
 			<view class="expect-text">
-				拍摄时确保身份证 <text>边框完整，字体清晰，亮度均匀；</text>
+				拍摄时确保身份证 <text>边框完整，字体清晰，亮度均匀</text>。
 			</view>
 			<view class="error">
 				<div class="error-item">
@@ -143,7 +143,7 @@
 			uploadFilePromise(event) {
 				return new Promise((resolve, reject) => {
 					let a = uni.uploadFile({
-						url: 'http://192.168.2.21/upload', // 仅为示例，非真实的接口地址
+						url: 'http://192.168.1.100/upload', // 仅为示例，非真实的接口地址
 						filePath: event,
 						name: 'file',
 						formData: {},

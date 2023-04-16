@@ -17,13 +17,18 @@
 <template>
 	<view class="ithui-content">
 		<view style="margin: 60rpx 40rpx;">
-			<u-button @click="navTo('/pages/authentication/style-one')" type="success" text="样式一 完善认证资料"></u-button>
+			<u-button @click="navTo('/pages/authentication/style-one')" type="success"
+				text="样式一 完善认证资料（身份证+银行卡）"></u-button>
 		</view>
 		<view style="margin: 60rpx 40rpx;">
-			<u-button @click="navTo('/pages/authentication/style-two')" type="error" text="样式二 实名认证"></u-button>
+			<u-button @click="navTo('/pages/authentication/style-two')" type="error" text="样式二 身份证实名认证（身份证）"></u-button>
 		</view>
 		<view style="margin: 60rpx 40rpx;">
-			<u-button @click="navTo('/pages/authentication/style-three')" type="primary" text="样式三 实名认证"></u-button>
+			<u-button @click="navTo('/pages/authentication/style-three')" type="primary"
+				text="样式三 上传身份证实名认证（身份证）"></u-button>
+		</view>
+		<view style="margin: 60rpx 40rpx;">
+			<u-button @click="navTo('/pages/authentication/style-four')" type="warning" text="样式四 实名认证"></u-button>
 		</view>
 	</view>
 </template>
